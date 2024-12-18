@@ -84,30 +84,6 @@ To check test coverage:
 make coverage
 ```
 
-## Project Structure
-
-cargoplot/
-
-├── cmd/
-
-│   └── main.go              # Application entry point
-
-├── internal/
-
-│   ├── handlers/            # HTTP request handlers
-
-│   ├── models/              # Data models
-
-│   ├── services/            # Business logic
-
-│   └── storage/             # Data storage
-
-├── tests/                   # Unit and integration tests
-
-├── Makefile                 # Automation commands
-
-└── README.md                # Project documentation
-
 ## License
 
 This project is licensed under the MIT License.
