@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func main() {
+func RunServer() {
 	router := http.NewServeMux()
 	handler := handlers.NewHandler()
 
@@ -14,4 +14,8 @@ func main() {
 
 	fmt.Println("Server is running on :3142")
 	http.ListenAndServe(":3142", router)
+}
+
+func main() {
+	RunServer()
 }
