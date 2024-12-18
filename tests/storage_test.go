@@ -31,7 +31,6 @@ func TestStorageAddAndGet(t *testing.T) {
 func TestStorageUpdateWithNewerDate(t *testing.T) {
 	store := storage.NewStorage()
 
-	// İlk giriş: Daha eski tarih
 	olderEntry := models.PriceEntry{
 		Company: 123,
 		Price:   500,
@@ -40,7 +39,6 @@ func TestStorageUpdateWithNewerDate(t *testing.T) {
 	}
 	store.Add(olderEntry)
 
-	// İkinci giriş: Daha yeni tarih, aynı şirket
 	newerEntry := models.PriceEntry{
 		Company: 123,
 		Price:   600,
@@ -49,7 +47,6 @@ func TestStorageUpdateWithNewerDate(t *testing.T) {
 	}
 	store.Add(newerEntry)
 
-	// Fiyatı kontrol et
 	retrieved := store.Get("CNSGH")
 	if len(retrieved) != 1 {
 		t.Errorf("Expected 1 entry, got %d", len(retrieved))
@@ -67,7 +64,6 @@ func TestStorageUpdateWithNewerDate(t *testing.T) {
 func TestStorageDoesNotUpdateWithOlderDate(t *testing.T) {
 	store := storage.NewStorage()
 
-	// İlk giriş: Daha yeni tarih
 	newerEntry := models.PriceEntry{
 		Company: 123,
 		Price:   600,
@@ -76,7 +72,6 @@ func TestStorageDoesNotUpdateWithOlderDate(t *testing.T) {
 	}
 	store.Add(newerEntry)
 
-	// İkinci giriş: Daha eski tarih, aynı şirket
 	olderEntry := models.PriceEntry{
 		Company: 123,
 		Price:   500,
@@ -85,7 +80,6 @@ func TestStorageDoesNotUpdateWithOlderDate(t *testing.T) {
 	}
 	store.Add(olderEntry)
 
-	// Fiyatı kontrol et
 	retrieved := store.Get("CNSGH")
 	if len(retrieved) != 1 {
 		t.Errorf("Expected 1 entry, got %d", len(retrieved))
