@@ -71,7 +71,7 @@ make run
 
 ## Running Tests
 
-The current test coverage is 95%.
+The current test coverage is 100%.
 To run all tests:
 
 ```bash
@@ -87,15 +87,25 @@ make coverage
 ## Project Structure
 
 cargoplot/
+
 ├── cmd/
+
 │   └── main.go              # Application entry point
+
 ├── internal/
+
 │   ├── handlers/            # HTTP request handlers
+
 │   ├── models/              # Data models
+
 │   ├── services/            # Business logic
+
 │   └── storage/             # Data storage
+
 ├── tests/                   # Unit and integration tests
+
 ├── Makefile                 # Automation commands
+
 └── README.md                # Project documentation
 
 ## License
