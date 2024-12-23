@@ -1,5 +1,5 @@
 # Binary name
-BINARY=cargoplot
+BINARY=delivery-portal
 
 # Default Go commands
 GO=go
